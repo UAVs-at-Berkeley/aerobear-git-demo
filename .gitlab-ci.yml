@@ -7,12 +7,10 @@ variables:
 before_script:
   - apt-get update
   - apt-get --yes --force-yes install rsync ssh
-  - bundle install
 
 pages:
   stage: deploy
   script:
-  - bundle exec jekyll build -d public
   - echo "${SSH_PRIVATE_KEY}" > id_rsa
   - chmod 400 id_rsa
   - mkdir "${HOME}/.ssh"
