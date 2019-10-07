@@ -11,7 +11,7 @@ stages:
 test:
   stage: test
   script:
-  - echo "Dummy line for now"
+  - echo "Check if files in data/ are valid JSON file"
   - |
     for file in data/*;
     do
