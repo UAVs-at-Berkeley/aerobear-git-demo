@@ -12,9 +12,9 @@ test:
   stage: test
   script:
   - echo "Dummy line for now"
-  - for file in ./
+  - for file in *;
     do
-      echo "$file"
+      echo $file
     done
 
 upload:
