@@ -18,14 +18,15 @@ test:
       cat $file | jq empty
     done
 
-.upload:
+upload:
   stage: upload
   script:
   - echo "${SSH_PRIVATE_KEY}" > id_rsa
   - chmod 400 id_rsa
   - mkdir "${HOME}/.ssh"
   - echo "${SSH_HOST_KEY}" > "${HOME}/.ssh/known_hosts"
-  - rsync -hrvz --delete --exclude='aerobear' --exclude='\..*' -e 'ssh -i id_rsa' ./ uav@tsunami.ocf.berkeley.edu:~/git-demo/
+  - rsync -hrvz --delete --exclude='venv' --exclude='__pycache__' --exclude='\..*' -e 'ssh -i id_rsa' ./src/ uav@tsunami.ocf.berkeley.edu:~/git-demo/
+  - rsync -hrvz --delete --exclude='venv' --exclude='__pycache__' --exclude='\..*' -e 'ssh -i id_rsa' ./data/ uav@tsunami.ocf.berkeley.edu:~/git-demo/data/
   only:
     refs:
     - master
