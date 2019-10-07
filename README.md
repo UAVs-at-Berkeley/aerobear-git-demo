@@ -38,3 +38,5 @@ From [CodeShip](https://codeship.com/continuous-integration-essentials)
 When you make a pull request in this repository, GitLab CI notices the new branch and fetches it. CI then runs our test, checking whether or not you've uploaded a valid JSON file under `data` folder.
 
 On the master branch once the PR is merged, if all tests pass, then GitLab CI uploads the data to our flask app running [here](https://aerobear.berkeley.edu/git-demo/). You can see your merged commit having an effect by adding your name to the marquee on the top of the page.
+
+You can see in [.gitlab-ci.yml](.gitlab-ci.yml) file, how we've set up the CI.
