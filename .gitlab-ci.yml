@@ -12,12 +12,13 @@ test:
   stage: test
   script:
   - echo "Dummy line for now"
-  - for file in *;
+  - |
+    for file in *;
     do
       echo $file
     done
 
-upload:
+.upload:
   stage: upload
   script:
   - echo "${SSH_PRIVATE_KEY}" > id_rsa
