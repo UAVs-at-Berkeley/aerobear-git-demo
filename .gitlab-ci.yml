@@ -1,4 +1,4 @@
-image: alpine
+image: debian
 
 before_script:
   - apt-get update
@@ -8,7 +8,7 @@ stages:
   - test
   - upload
 
-step-1:
+test:
   stage: test
   script:
   - echo "Dummy line for now"
@@ -17,7 +17,7 @@ step-1:
       echo "$file"
     done
 
-step-2:
+upload:
   stage: upload
   script:
   - echo "${SSH_PRIVATE_KEY}" > id_rsa
