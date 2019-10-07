@@ -13,9 +13,9 @@ test:
   script:
   - echo "Dummy line for now"
   - |
-    for file in *;
+    for file in data/*;
     do
-      echo $file
+      jq $file
     done
 
 .upload:
