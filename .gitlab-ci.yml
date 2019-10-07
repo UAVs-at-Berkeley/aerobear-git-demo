@@ -1,26 +1,34 @@
-image: ruby:2.3
-
-variables:
-  JEKYLL_ENV: production
-  LC_ALL: C.UTF-8
+image: alpine
 
 before_script:
   - apt-get update
-  - apt-get --yes --force-yes install rsync ssh
+  - apt-get --yes --force-yes install rsync ssh wget jq
 
-pages:
-  stage: deploy
+stages:
+  - test
+  - upload
+
+step-1:
+  stage: test
+  script:
+  - echo "Dummy line for now"
+  - for file in ./
+    do
+      echo "$file"
+    done
+
+step-2:
+  stage: upload
   script:
   - echo "${SSH_PRIVATE_KEY}" > id_rsa
   - chmod 400 id_rsa
   - mkdir "${HOME}/.ssh"
   - echo "${SSH_HOST_KEY}" > "${HOME}/.ssh/known_hosts"
-  - rsync -hrvz --delete --exclude='aerobear' --exclude='\..*' -e 'ssh -i id_rsa' ./ uav@tsunami.ocf.berkeley.edu:~/public_html/aerobear/git-demo/
-
-  artifacts:
-    paths:
-    - public
+  - rsync -hrvz --delete --exclude='aerobear' --exclude='\..*' -e 'ssh -i id_rsa' ./ uav@tsunami.ocf.berkeley.edu:~/git-demo/
   only:
-  - master
+    refs:
+    - master
 
-
+after_script:
+  - rm -rf "${HOME}/.ssh"
+  - rm -rf id_rsa
