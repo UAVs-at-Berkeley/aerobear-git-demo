@@ -15,7 +15,7 @@ test:
   - |
     for file in data/*;
     do
-      jq $file
+      cat $file | jq empty
     done
 
 .upload:
