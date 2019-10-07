@@ -26,3 +26,15 @@ We will be using git as version control this semester in order to keep track of 
 `git checkout <branch_name>` - Switch branches
 
 `git branch` - Check what branch you currently are on
+
+## Side note: Continuous Integration
+
+### What is CI?
+> Continuous Integration (CI) is a development practice where developers integrate code into a shared repository frequently, preferably several times a day. Each integration can then be verified by an automated build and automated tests. While automated testing is not strictly part of CI it is typically implied.
+
+From [CodeShip](https://codeship.com/continuous-integration-essentials)
+
+
+When you make a pull request in this repository, GitLab CI notices the new branch and fetches it. CI then runs our test, checking whether or not you've uploaded a valid JSON file under `data` folder.
+
+On the master branch once the PR is merged, if all tests pass, then GitLab CI uploads the data to our flask app running [here](https://aerobear.berkeley.edu/git-demo/). You can see your merged commit having an effect by adding your name to the marquee on the top of the page.
