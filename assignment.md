@@ -29,12 +29,12 @@ Here are the list of resources that would be helpful if you need some guidance o
 
 ## Task Checklist
 
-- [ ] Clone this repository
-- [ ] Make your own branch
-- [ ] Write a JSON that at least contain a "name" field, with your name
-- [ ] Make commit including that file
-- [ ] Push your branch (note, not `master` branch)
-- [ ] Make a pull request on GitHub
+- [x] Clone this repository
+- [x] Make your own branch
+- [x] Write a JSON that at least contain a "name" field, with your name
+- [x] Make commit including that file
+- [x] Push your branch (note, not `master` branch)
+- [x] Make a pull request on GitHub
 - [x] Team leader approves your change, or requests a change
-- [ ] Once all the checks are passed, merge the PR into `master` branch
-- [ ] Check out the website with your change!
+- [x] Once all the checks are passed, merge the PR into `master` branch
+- [x] Check out the website with your change!
