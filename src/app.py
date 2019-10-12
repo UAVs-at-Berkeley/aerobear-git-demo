@@ -54,7 +54,7 @@ function onMouseUp(event) {
 }
 </script>
 <body>
-<marquee>{names}</marquee>
+<marquee scrollamount="10">{names}</marquee>
 <canvas style="height:100%;" id="myCanvas" resize></canvas>
 </head>
 </body>
