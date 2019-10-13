@@ -35,6 +35,6 @@ Here are the list of resources that would be helpful if you need some guidance o
 - [x] Make commit including that file
 - [x] Push your branch (note, not `master` branch)
 - [x] Make a pull request on GitHub
-- [] Team leader approves your change, or requests a change
-- [] Once all the checks are passed, merge the PR into `master` branch
-- [] Check out the website with your change!
+- [ ] Team leader approves your change, or requests a change
+- [ ] Once all the checks are passed, merge the PR into `master` branch
+- [ ] Check out the website with your change!
