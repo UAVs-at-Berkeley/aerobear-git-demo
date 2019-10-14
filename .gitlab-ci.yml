@@ -27,6 +27,7 @@ upload:
   - echo "${SSH_HOST_KEY}" > "${HOME}/.ssh/known_hosts"
   - rsync -hrvz --delete --exclude='venv' --exclude='__pycache__' --exclude='\..*' -e 'ssh -i id_rsa' src/ uav@tsunami.ocf.berkeley.edu:~/git-demo/
   - rsync -hrvz --delete --exclude='venv' --exclude='__pycache__' --exclude='\..*' -e 'ssh -i id_rsa' data/ uav@tsunami.ocf.berkeley.edu:~/git-demo/data/
+  - ssh uav@tsunami.ocf.berkeley.edu "touch public_html/aerobear/git-demo/run.fcgi"
   only:
     refs:
     - master
